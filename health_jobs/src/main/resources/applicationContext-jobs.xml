@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context.xsd
+               http://www.springframework.org/schema/aop
+               http://www.springframework.org/schema/aop/spring-aop.xsd
+               http://www.springframework.org/schema/tx
+               http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--1；配置自定义的Job（自定义任务类）-->
+    <bean id="jobDemo" class="com.itheima.health.job.ClearImgJob"></bean>
+
+    <!--2：任务描述，任务描述细节-->
+    <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="jobDemo"></property>
+        <property name="targetMethod" value="clearImg"></property>
+    </bean>
+
+    <!--3：定义触发器-->
+    <bean id="trigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetail"></property>
+        <!--
+            触发器的表达式？
+            每天凌晨12点执行一次   表示从0秒开始，每10秒执行一次任务
+        -->
+        <!--<property name="cronExpression" value="0 * * * * ?"></property>-->
+        <property name="cronExpression" value="30 32 12 * * ?"></property>
+    </bean>
+
+    <!--4：使用调度工厂，执行触发器-->
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="trigger"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <!--组件的扫描，不能使用@Autowired注解-->
+    <context:component-scan base-package="com.itheima.health"></context:component-scan>
+</beans>
