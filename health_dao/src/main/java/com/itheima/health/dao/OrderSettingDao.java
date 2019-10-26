@@ -31,4 +31,6 @@ public interface OrderSettingDao {
     void updateByOrderDate(Date date);
 
     void updateReservationsByOrderDate(Date date);
+
+    void deletePassOrderSetting(String date);
 }

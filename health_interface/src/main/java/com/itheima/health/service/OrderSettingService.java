@@ -9,11 +9,16 @@ public interface OrderSettingService {
 
     void addList(List<OrderSetting> orderSettingList);
 
-    List<Map<String,Object>> findOrderSettingByCurrentDate(String date);
+    List<Map<String, Object>> findOrderSettingByCurrentDate(String date);
 
     void updateNumberByOrderDate(OrderSetting orderSetting);
 
     void testUpdate();
 
     void testUpdate2();
+
+    //删除过时的预约设置数据
+    void deletePassOrderSetting();
+
+
 }

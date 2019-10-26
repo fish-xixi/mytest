@@ -8,6 +8,7 @@ import com.itheima.health.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -112,6 +113,26 @@ public class OrderSettingServiceImpl implements OrderSettingService {
         System.out.println("111111111");
         System.out.println("222222222");
     }
+    /*
+    * 删除过时的预约设置信息
+    * */
+    @Override
+    public void deletePassOrderSetting() {
 
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE,-12); // 当前时间往前推12天
+        String oldDate = new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
+        /*
+        * 根据需求设置过期日期
+        * 这里设置昨天的设置信息就过期
+        * */
+        try {
+            String date2String = DateUtils.parseDate2String(DateUtils.getToday());
+            orderSettingDao.deletePassOrderSetting(date2String);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
