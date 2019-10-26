@@ -79,6 +79,7 @@
 <script src="../js/axios-0.18.0.js"></script>
 <script src="../plugins/elementui/index.js"></script>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/echarts.js"></script>
 <script>
     new Vue({
         el: '#app',
@@ -186,6 +187,19 @@
                             "path": "/5-3",
                             "title": "运营数据统计",
                             "linkUrl":"report_business.html",
+                            "children":[]
+                        }
+                    ]
+                },
+                {
+                    "path": "6",     //菜单项所对应的路由路径
+                    "title": "用户角色管理",     //菜单项名称
+                    "icon":"fa-user-md",//fa-user-md
+                    "children":[//是否有子菜单，若没有，则为[]
+                        {
+                            "path": "/6-1",
+                            "title": "用户权限管理",
+                            "linkUrl":"role_manage.html",
                             "children":[]
                         }
                     ]
