@@ -10,6 +10,7 @@ import java.util.Set;
  */
 public class User implements Serializable{
     private Integer id; // 主键
+    private String jobNumber; // 工号
     private Date birthday; // 生日
     private String gender; // 性别
     private String username; // 用户名，唯一
@@ -19,12 +20,21 @@ public class User implements Serializable{
     private String telephone; // 联系电话
     private Set<Role> roles = new HashSet<Role>(0);//对应角色集合
 
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getJobNumber() {
+        return jobNumber;
+    }
+
+    public void setJobNumber(String jobNumber) {
+        this.jobNumber = jobNumber;
     }
 
     public Date getBirthday() {

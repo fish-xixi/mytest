@@ -12,7 +12,6 @@
     <artifactId>health_common</artifactId>
 
     <packaging>jar</packaging>
-
     <dependencies>
         <dependency>
             <groupId>com.github.pagehelper</groupId>

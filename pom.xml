@@ -12,10 +12,10 @@
         <module>health_pojo</module>
         <module>health_dao</module>
         <module>health_interface</module>
-        <!--<module>healthmobile_web</module>-->
-        <!--<module>health_jobs</module>-->
-        <!--<module>health_service</module>-->
-        <!--<module>health_web</module>-->
+        <!--<module>healthmobile_web</module>
+        <module>health_jobs</module>
+        <module>health_service</module>
+        <module>health_web</module>-->
     </modules>
 
     <packaging>pom</packaging>
@@ -130,13 +130,13 @@
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
-                <version>${pagehelper.version}</version>
+                <version>4.1.4</version>
             </dependency>
             <!-- Mybatis -->
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
+                <version>3.5.2</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis</groupId>
