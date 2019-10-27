@@ -1,7 +1,7 @@
 package com.itheima.health.constants;
 
 /**
- * 消息常量
+ * 消息常量 测试上传
  */
 public class MessageConstant {
     public static final String DELETE_CHECKITEM_FAIL = "删除检查项失败";
