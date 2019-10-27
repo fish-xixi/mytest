@@ -211,7 +211,34 @@
                                                 </el-col>
                                             </el-row>
                                         </el-form>
+                                        <div>
+                                            <el-form>
+                                                <el-row>
+                                                    <el-col :span="12">
+                                                        <el-form-item label="父角色">
+                                                            <el-select v-model="formData.role">
+                                                                <el-option label="system" value="1"></el-option>
+                                                                <el-option label="admin" value="2"></el-option>
+                                                            </el-select>
+                                                        </el-form-item>
+                                                    </el-col>
+                                                </el-row>
+                                            </el-form>
+                                        </div>
+
+
                                     </el-tab-pane>
+
+
+
+
+
+
+
+
+
+
+
 
 
                                     <el-tab-pane label="操作权限" name="third">
