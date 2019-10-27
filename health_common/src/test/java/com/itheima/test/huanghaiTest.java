@@ -6,6 +6,6 @@ package com.itheima.test;
  */
 public class huanghaiTest {
     public static void main(String[] args) {
-        System.out.println("  测试用例。。。");
+        System.out.println("  测试用例。.。。");
     }
 }
